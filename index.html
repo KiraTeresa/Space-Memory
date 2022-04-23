@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="styles.css" rel="stylesheet">
+        <script src="script.js" async></script> <!-- async to load script at the same time as index.html -->
+        <title>Memory</title>
+    </head>
+    <body>
+        <h1 class="pageTitle">Memory</h1>
+
+        <div class="overlay-text visible">
+            Click to Start
+        </div>
+
+        <div id="game-over-text" class="overlay-text">
+            GAME OVER
+            <span class="overlay-text-small">Try Again</span>
+        </div>
+
+        <div id="victory-text" class="overlay-text">
+            VICTORY
+            <span class="overlay-text-small">Play Again</span>
+        </div>
+
+        <div class="gameContainer"> <!-- container holds the info and the cards-->
+            <div class="gameInfoContainer">
+                <div class="gameInfo">
+                    Time: <span id="timer">100</span>
+                </div>
+                <div class="gameInfo">
+                    Flips: <span id="flips">0</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_blue.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_blue.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_green.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_green.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_peach.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_peach.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_pink.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_pink.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_purple.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_purple.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_red.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_red.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_turquois.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-monster_turquois.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-spaceship_blue.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-spaceship_blue.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-spaceship_orange.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-spaceship_orange.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-spaceship_pink.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-spaceship_pink.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-spaceship_red.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-spaceship_red.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-spaceship_rose.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="space-background" src="/assets/Graphics/space-background.jpg">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="/assets/Graphics/pixel-game-spaceship_rose.jpg">
+                </div>
+            </div>
+        </div>
+    <footer>
+        <div class="footer">
+            <a href="https://www.vecteezy.com/free-vector/retro-gaming">Retro Gaming Vectors by Vecteezy</a>
+            <span> // </span>
+            <a href="https://www.vecteezy.com/free-vector/happy">Happy Vectors by Vecteezy</a>
+            <span> // </span>
+            <a href="https://www.vecteezy.com/free-vector/space">Space Vectors by Vecteezy</a>
+            <span> //</span>
+            <a href="https://mixkit.co/free-sound-effects/">Sound Effects from mixkit.co</a>
+        </div>
+    </footer>
+    </body>
+</html>

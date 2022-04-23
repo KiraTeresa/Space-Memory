@@ -1,0 +1,196 @@
+/* import fonts */
+@font-face {
+    font-family: PressStart2P;
+    src: url(assets/Fonts/PressStart2P-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Orbitron;
+    src: url(assets/Fonts/Orbitron-VariableFont_wght.ttf) format("truetype");
+}
+
+/* Makes sizing the elements easier: */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(#00030c, #091c38);
+}
+
+.overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+    color: #AFEEEE;
+    font-family: PressStart2P, serif;
+}
+
+.overlay-text-small {
+    font-size: .3em;
+    font-family: Orbitron, serif;
+}
+
+.overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow {
+    from { /* defines where/how the animation starts */
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to { /* defines where/how the animation ends */
+        background-color: rgba(0, 0, 0, .8);
+        font-size: 10em;
+    }
+}
+
+.pageTitle {
+    color: #AFEEEE;
+    font-family: PressStart2P, serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 6em;
+}
+
+.gameInfoContainer {
+    /* Makes the elements within this container go from the first column to the last one: */
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gameInfo {
+    color: #B0E0E6;
+    font-family: Orbitron, serif;
+    font-size: 2em;
+}
+
+.gameContainer {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    margin: 50px auto;
+    justify-content: center;
+    /* add 3D animation to make cards actually flip: */
+    perspective: 500px;
+}
+
+.card {
+    position: relative;
+    height: 150px;
+    width: 150px;
+
+}
+
+.card-face {
+    position: absolute; /* front and back of the card need to go in the same position */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transition: transform 500ms ease-in-out;
+}
+
+.card.visible .card-back {
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+    transform: rotateY(0deg);
+}
+
+.card.matched .card-value {
+    animation: dance 1s linear infinite 500ms; /* animation starts with a 500ms delay, because that's the time the card needs to flip around */
+}
+
+@keyframes dance {
+    0%, 100% {
+        transform: rotate(0); /* Start and stop at center */
+    }
+    25% {
+        transform: rotate(-30deg);
+    }
+    75% {
+        transform: rotate(30deg);
+    }
+}
+
+.card-front {
+    background-color: #ffffff;
+    border: solid 1px #0f2027;
+    transform: rotateY(180deg);
+}
+
+.card-value {
+    transform: scale(.7);
+}
+
+.card-value:hover {
+    transform: scale(.8);
+}
+
+.card-back {
+    border: solid 1px #191970;
+}
+
+/*.card-back:hover {
+    cursor: pointer;
+    border-radius: 12px;
+    border: solid 1px ;
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-iteration-count:1;
+    -webkit-animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}*/
+
+
+.footer {
+    color: rgba(240, 248, 255, .7);
+    font-size: .8em;
+    text-align: center;
+}
+
+footer a {
+    color: rgba(240, 248, 255, .4);
+    text-decoration: none;
+}
+
+
+/* allows certain styles only when certain criterias are met */
+@media (max-width: 600px) {
+    .gameContainer {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .gameInfoContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
